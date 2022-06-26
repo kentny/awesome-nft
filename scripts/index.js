@@ -6,7 +6,10 @@ const main = async () => {
     
     console.log(`Contract Address: ${awesomeNFTContract.address}`);
 
-    const transaction = await awesomeNFTContract.createNFT();
+    let transaction = await awesomeNFTContract.createNFT();
+    await transaction.wait();
+
+    transaction = await awesomeNFTContract.createNFT();
     await transaction.wait();
 }
 
